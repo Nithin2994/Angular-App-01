@@ -1,0 +1,36 @@
+<div class="body">
+        <h2>Register</h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="grid-container">
+        
+                
+                    <div>
+                        <h3>Personal Details</h3>
+                        <input style="width:25em" [ngClass]="{'error': isValid('firstName')}" type="text" placeholder="First Name" formControlName="firstName"><br>
+                        <input style="width: 25em" [ngClass]="{'error': isValid('lastName')}" type="text" placeholder="Last Name" formControlName="lastName"><br>
+                        <input style="width: 25em" [ngClass]="{'error': isValid('email')}" type="email"  placeholder="Email" formControlName="email"><br>
+                        <input style="width: 25em" [ngClass]="{'error': isValid('password')}" type="password"  placeholder="Password" formControlName="password"><br>
+                        <input style="width: 25em" [ngClass]="{'error': isValid('confirmPassword')}" type="password"  placeholder="Confirm Password" formControlName="confirmPassword"><br>
+                        Date Of Birth<input style="width:200px" type="date" placeholder="DOB" formControlName="dob"><br>
+                    </div>
+                    <div>
+                        <h3>Address/Contact Details</h3>
+
+                        <input style="width: 25em" type="text" placeholder="Address" formControlName="address"><br>
+                        <input style="width: 25em" type="text" placeholder="City" formControlName="city"><br>
+                        <input style="width: 25em" type="text" placeholder="State" formControlName="state"><br>
+                        <input style="width: 25em" type="text" placeholder="Country" formControlName="country"><br>
+                        <input style="width: 25em" type="number" placeholder="Pincode" formControlName="pincode"><br>
+                        <input style="width: 25em" type="number" placeholder="Contact" formControlName="contact"><br>
+                    <br>
+                    <span *ngIf="form.errors?.mismatchedFields">Passwords do not match</span>
+                    <br>
+                   
+                
+                    </div>
+                   
+
+    </div>
+    <button class="button button2" style="margin-left:10em;width:40em;">Register</button>
+    </form>
+</div>

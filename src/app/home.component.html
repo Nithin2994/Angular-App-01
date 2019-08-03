@@ -1,0 +1,20 @@
+<div class="w3-content" style="max-width:150em;padding-top: 0;">
+        <img class="mySlides" src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/CEEX/VivoNEX/PreBook/Revised/D5603923_IN_WLM_Vivo_NEX_LaunchGraphics_HVG_PCBunk_1500x300._CB472065865_.jpg" style="width:100%">
+        <img class="mySlides" src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/CEEX/Redmi5/NEWNEW/D5487736_REdmi-5-new_PC-Bunk_1500x300._CB472999224_.jpg" style="width:100%">
+        <img class="mySlides" src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/Books/012018/Acad/UniStore/ID-1093337-Superhero-1x._CB489090313_.jpg" style="width:100%">
+</div>
+<div class='body'>
+        
+    <!-- [(ngModel)]="web.searchQuery"    -->
+    <input placeholder="Search product" (keyup)='loadSearchResults($event)'  type="text">
+    
+    Price : <select name="priceFilter" (change)="changePriceFilter($event.target)">
+            <option value="1">Low to High</option>
+            <option value="2">High to Low</option>
+          </select>
+    Launch Date : <select name="launchFilter" (change)="changeLaunchFilter($event.target)">
+                <option value="3">New to Old</option>
+                <option value="4">Old to New</option>
+              </select>
+        <app-searchresult></app-searchresult>
+</div>

@@ -1,0 +1,65 @@
+<div class="body">
+    <h3>Account Details</h3>
+    <h4>Name : {{auth.userDetails.firstName}}</h4>
+    <h4>Email : {{auth.userDetails.email}}</h4>
+<br>
+<h3>Address Details</h3>
+    <div class="grid-container">
+        
+        <div class="block" style="text-align:left" *ngFor="let address of auth.userAddress">
+            <div *ngIf="!showAddress">
+                    <span>&nbsp;&nbsp;{{address.address}}<br></span>
+                    <span>&nbsp;&nbsp;{{address.city}}<br></span>
+                    <span>&nbsp;&nbsp;{{address.state}}<br></span>
+                    <span>&nbsp;&nbsp;{{address.country}}<br></span>
+                    <span>&nbsp;&nbsp;{{address.pincode}}<br></span>
+                    <span>&nbsp;&nbsp;{{address.contact}}<br></span>
+            </div>
+            <div *ngIf="showAddress">
+                    
+                    <input style="margin:0px;background-color:rgba(150, 151, 151, 0.185);" type="text" placeholder="Address" [(ngModel)]="address.address"  value={{address.address}}><br>
+                    <input style="margin:0px;background-color:rgba(150, 151, 151, 0.185);"  type="text" placeholder="City" [(ngModel)]="address.city" value={{address.city}}><br>
+                    <input style="margin:0px;background-color:rgba(150, 151, 151, 0.185);"  type="text" placeholder="State" [(ngModel)]="address.state" value={{address.state}}><br>
+                    <input style="margin:0px;background-color:rgba(150, 151, 151, 0.185);" type="text" placeholder="Country" [(ngModel)]="address.country" value={{address.country}}><br>
+                    <input style="margin:0px;background-color:rgba(150, 151, 151, 0.185);" type="number" placeholder="Pincode" [(ngModel)]="address.pincode" value={{address.pincode}}><br>
+                    <input  style="margin:0px;background-color:rgba(150, 151, 151, 0.185);" type="number" placeholder="Contact" [(ngModel)]="address.contact" value={{address.contact}}><br>
+                    
+                    <button class="button" (click)="saveAddress(address)">save</button>
+                    
+            </div>
+            <button *ngIf="!showAddress" class="button" (click)="showEditAddress()">edit</button>
+            
+        </div>
+
+    </div>
+
+    <div *ngIf="!showOrders" class="button" (click)="showOrderDetails()">View Orders</div>
+
+    <div *ngIf="showOrders" class="button" (click)="hideOrderDetails()">Hide Orders</div>
+
+    <div *ngIf="showOrders && web.ordersSize > 0" style="overflow-x:auto;">
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>OrderID</th>
+                <!-- <th>Products</th> -->
+                <th>Amout</th>
+                <th>Status</th>
+            </tr>
+           
+
+                <tr *ngFor="let orders of web.orderDetails ;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{orders.orderId}}</td>
+                    <!-- <td>
+                        <div *ngFor="let item of orders.itemsOrderd">
+                            {{item.Name}}
+                        </div>
+                    </td> -->
+                    <td>{{orders.orderAmount}}</td>
+                    <td>{{orders.status}}</td>
+                </tr>
+
+        </table>
+    </div>
+</div>

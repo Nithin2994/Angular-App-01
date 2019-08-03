@@ -1,0 +1,23 @@
+<div class="body">
+        <a class="button" href="/WishList">Check Wish List</a>
+        <div *ngIf="!isOrderPlaced && web.cartValue > 0" class="grid-container">
+        <div  *ngFor="let mobiles of web.cart | async | filterUnique"> 
+               <div class="grid-container item1">
+                    <div>
+                            <a href="DetailedView/{{mobiles.Name}}"><img src="{{mobiles.url}}" ></a>
+                            <h3>{{mobiles.Name}}</h3>
+                    </div>
+                    <div>
+                            <h3>Brand : {{mobiles.Brand}}</h3>
+                            <h3>Price : {{mobiles.price}}</h3>
+                            <a class="button" (click)="removeFromCart(mobiles)">Remove</a>
+                            <a class="button" (click)="addToWishList(mobiles)">Move to wishlist</a>
+                    </div>    
+               </div>
+        </div>
+       
+        </div>
+        <h3 *ngIf="!isOrderPlaced && web.cartValue > 0" >Cart Value : {{web.cartValue}}</h3>
+        <button class="button" *ngIf="!isOrderPlaced && web.cartValue > 0" (click)="order()">Order</button>
+        <h1 *ngIf="isOrderPlaced" style="color:lightgreen">Order Placed Successfully</h1>
+    </div>

@@ -1,0 +1,21 @@
+
+
+<div class="body">
+     <!-- [(ngModel)]="web.searchQuery"    -->
+     <input placeholder="Search for Mobiles (Brand / Mobile Name)" (keyup)='loadSearchResults($event)'  type="text">
+    
+     Price : <select name="priceFilter" (change)="changePriceFilter($event.target)">
+             <option value="1">Low to High</option>
+             <option value="2">High to Low</option>
+           </select>
+     Launch Date : <select name="launchFilter" (change)="changeLaunchFilter($event.target)">
+                <option value="3">New to Old</option>
+                <option value="4">Old to New</option>
+              </select>
+         <app-searchresult></app-searchresult>
+
+</div>
+
+
+
+<!-- Header -->

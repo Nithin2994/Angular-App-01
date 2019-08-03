@@ -1,0 +1,13 @@
+
+    <div class="grid-container">
+        <div *ngFor="let item of web.searchItems | async">
+            <div>
+                <a href="DetailedView/{{item.Name}}">
+                    <img src="{{item.url}}">
+                </a>
+                <h3>{{item.Name}}</h3>
+                <h5>Brand : {{item.Brand}}</h5>
+                <h5>Price : {{item.price}}</h5>
+            </div>
+        </div>
+    </div>

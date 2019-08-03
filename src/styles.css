@@ -1,1 +1,171 @@
-/* You can add global styles to this file, and also import other style files */
+  .body{
+
+    padding: 5%;
+  }
+
+  .website-color{
+    background-color:rgba(0, 38, 43, 0.966);
+  }
+
+  .brand-title{
+    font-size-adjust: inherit;
+    font-size: 2.7vw;
+  }
+
+  a :hover{
+    color: white;
+    text-decoration-color: white;
+  }
+
+  .icon-bar {
+    position: fixed;
+    top: 50%;
+    right:0%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .icon-bar a:hover {
+      background-color: #000;
+  }
+  
+  .facebook {
+    background:rgba(0, 38, 43, 0.966);
+    color: white;
+  }
+  
+  .twitter {
+    background: rgba(0, 38, 43, 0.966);
+    color: white;
+  }
+  
+  .google {
+    background:rgba(0, 38, 43, 0.966);
+    color: white;
+  }
+  
+  .youtube {
+    background:rgba(0, 38, 43, 0.966);
+    color: white;
+  }
+  
+  .content {
+    margin-left: 75px;
+    font-size: 30px;
+  }
+
+ 
+
+  .grid-container > div {
+    text-align: center;
+    padding: 2em 0;
+    font-size: 1em;
+  }
+
+  .grid-container1 > div {
+    text-align: center;
+    padding: 2em 0;
+    font-size: 0.5em;
+    width : 30em;
+  }
+
+  .grid-container1 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 2em;
+  }
+
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      grid-gap: 2em;
+      padding: 2em;
+    }
+
+  @media (max-width: 1000px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 2em;
+      padding: 2em;
+    }
+  }
+
+  .item1 {
+    grid-column: 1 / span 3;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.block{
+  background-color: rgba(150, 151, 151, 0.185); 
+  color: rgb(20, 19, 19);
+  display: inline-block;
+  font-size: 2em;
+  box-shadow: 0 12px 16px 0 rgba(180, 163, 163, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.block1{
+  background-color: rgba(255, 255, 255, 0.966); 
+  color: rgb(20, 19, 19);
+  font-size: 2em;
+  display: inline-block;
+  box-shadow: 0 12px 16px 0 rgba(180, 163, 163, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button {
+  background-color: rgba(0, 38, 43, 0.966); 
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(180, 163, 163, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.error {
+  background-color: #fff0f0
+}
+
+.footer{
+  font-size: 0.7em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  width : 10vmax;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}

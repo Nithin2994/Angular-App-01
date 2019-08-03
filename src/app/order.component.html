@@ -1,0 +1,25 @@
+<div class="body">
+    <div *ngIf="!isOrderPlaced && web.cartValue > 0" class="grid-container">
+
+        <div style="text-align: left;" *ngFor="let address of auth.userAddress ">
+            <h2>Delivery Address</h2>
+            <br>
+            <h3>{{address.address}}</h3>
+            <h3>{{address.city}}</h3>
+            <h3>{{address.state}}</h3>
+            <h3>{{address.country}}</h3>
+            <h3>{{address.pincode}}</h3>
+            <h3>{{address.contact}}</h3>
+        </div>
+        
+        <div style="text-align: left">
+            <h2>Payment Mode : COD (Cash On Delivery)</h2>
+            <h3 *ngIf="!isOrderPlaced && web.cartValue > 0">Cart Value : {{web.cartValue}}</h3>
+        </div>
+    </div>
+    
+    <button class="button" style="width:10em;" *ngIf="!isOrderPlaced && web.cartValue > 0" (click)="placeOrder()">Order</button>
+    <h1 *ngIf="isOrderPlaced" style="color:lightgreen">Order Placed Successfully</h1>
+    <h1 *ngIf="isOrderPlaced" style="color:lightgreen">Track your order by id : {{getOrderId}}</h1>
+    <a class="button" style="width:10em;" *ngIf="!isOrderPlaced && web.cartValue > 0" href="/">Cancel</a>
+</div>
